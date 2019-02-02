@@ -9,15 +9,30 @@
 
 
 CREATE TABLE users (
-  user_id bigserial,
+  id bigserial,
   hero_id integer,
+  username varchar(25),
   first_name varchar(20),
-  last_name(20),
-  start_mana integer,
+  last_name varchar(20),
   time_played time,
-  create_date TIMESTAMP WITHOUT TIME ZONE NULL DEFAULT NOW(),
-  CONSTRAINT hero_id_key PRIMARY KEY (hero_id)
+  sign_up_date date,
+  CONSTRAINT hero_id_key PRIMARY KEY (hero_id, username)
 )
+
+INSERT INTO users (hero_id, username, first_name, last_name, time_played, sign_up_date)
+VALUES ('1', 'Tfink', 'Tyler', 'Fink', '02:32:43', '2019-1-2')
+INSERT INTO users (hero_id, username, first_name, last_name, start_mana, time_played, sign_up_date)
+VALUES ('1', 'Finky', 'Tyler', 'Fink', '04:30:12', '2019-14-1')
+INSERT INTO users (hero_id, username, first_name, last_name, start_mana, time_played, sign_up_date)
+VALUES ('2', 'MCO', 'Zach', 'Reitzle', '02:12:54', '2019-1-2')
+INSERT INTO users (hero_id, username, first_name, last_name, start_mana, time_played, sign_up_date)
+VALUES ('3', 'JF', 'Jimmy', 'Fallon', '08:38:32', '2017-3-3')
+INSERT INTO users (hero_id, username, first_name, last_name, start_mana, time_played, sign_up_date)
+VALUES ('4', 'CapnSaylor', 'Cag', 'Saylor', '12:13:24', '2019-1-2')
+INSERT INTO users (hero_id, username, first_name, last_name, start_mana, time_played, sign_up_date)
+VALUES ('5', 'jsfink', 'Jason', 'Fink', '04:30:12', '2019-2-1')
+INSERT INTO users (hero_id, username, first_name, last_name, time_played, sign_up_date)
+VALUES ('5', 'jsfink', 'Jason', 'Fink', '04:30:12', '2019-4-1')
 
 
 CREATE TABLE heros (
